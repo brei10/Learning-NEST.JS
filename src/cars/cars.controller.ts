@@ -14,11 +14,8 @@ export class CarsController {
     getAllCars() {
         return this.carsService.findAll();
     }
-    // @Get(':id')
-    // getCarById( @Param('id') id ){
-    //     if(+id > this.cars.length -1 || +id < 0 ){
-    //         return 'not found'
-    //     } 
-    //     if(Number(+id)) return  this.cars[+id]   
-    // }
+    @Get(':id')
+    getCarById( @Param('id') id ){
+         return this.carsService.findOne(+id);
+    }
 }
